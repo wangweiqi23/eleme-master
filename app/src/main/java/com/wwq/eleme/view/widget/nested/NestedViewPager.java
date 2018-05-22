@@ -131,10 +131,6 @@ public class NestedViewPager extends ViewPager implements NestedScrollingChild2 
      * @return
      */
     private boolean isInterceptNested(int dy, int x, int y) {
-//        Log.d(TAG, "NestedViewPager isInterceptNested miniTopHeight:" + mMiniTopHeight
-//                + " isScrollDown:" + (dy> 0) + " y:" + getY() + " !canScroll:"
-//                + !canScroll(this, false, dy, x, y) +" mCurItem:" + getCurrentItem()
-//                +" sIsMenuExpand:"+sIsMenuExpand);
         if (dy < 0) {//上滑
             return getY() > mMiniTopHeight;
         } else {
@@ -222,9 +218,6 @@ public class NestedViewPager extends ViewPager implements NestedScrollingChild2 
                 final int y = (int) ev.getY();
                 final int dy = y - mInitialMotionY;
                 final int yDiff = Math.abs(dy);
-                Log.v(TAG, "NestedViewPager onInterceptTouchEvent ACTION_MOVE " +
-                        "Moved x to:" + x + "," + y + " diff=" + xDiff + "," + yDiff
-                        + " isIntercept:" + isInterceptNested(dy, x, y));
                 if (yDiff > mTouchSlop && yDiff * 0.5f > xDiff && isInterceptNested(dy, x, y)) {
 //                    if (!mIsBeingDragged) {
 ////                        mLastMotionY = y;
@@ -301,12 +294,6 @@ public class NestedViewPager extends ViewPager implements NestedScrollingChild2 
                     mNestedYOffset += mScrollOffset[1];
                 }
 
-                Log.i(TAG, "=2= NestedViewPager onTouchEvent ACTION_MOVE " +
-                        "mLastMotionY:" + mLastMotionY + " y:" + ev.getY() + " deltaY:" + deltaY
-                        + " mIsBeingDragged:" + mIsBeingDragged + " Y:" + getY()
-                        + " mScrollConsumed:" + Arrays.toString(mScrollConsumed)
-                        + " mScrollOffset:" + Arrays.toString(mScrollOffset)
-                        + " mNestedYOffset:" + mNestedYOffset);
                 if (mIsBeingDragged) {
                     mLastMotionY = y - mScrollOffset[1];
 

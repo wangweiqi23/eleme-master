@@ -192,8 +192,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
             mHeadsUpArrow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "ShopInfoDetail mHeadsUpArrow clicked mOffsetSpring:" +
-                            mOffsetSpring + " mAppbarLayoutMaxOffset:" + mAppbarLayoutMaxOffset);
                     checkShouldSpringRecover(mParent, mAppBarLayout);
                 }
             });
@@ -236,8 +234,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
         //滑动到最大状态后 屏蔽滑动事件
         mIsBeingDragged = super.onInterceptTouchEvent(parent, child, ev) && mOffsetSpring !=
                 mAppbarLayoutMaxOffset;
-        Log.d(TAG, "touch onInterceptTouchEvent intercept:" + mIsBeingDragged + " action:" + ev
-                .getAction());
         return false;
     }
 
@@ -245,8 +241,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
     public boolean onTouchEvent(CoordinatorLayout parent, AppBarLayout child, MotionEvent ev) {
         boolean touch = super.onTouchEvent(parent, child, ev) && mOffsetSpring !=
                 mAppbarLayoutMaxOffset;
-        Log.d(TAG, "touch onTouchEvent intercept:" + mIsBeingDragged + " action:" + ev
-                .getAction() + " touch:" + touch);
         if (child != null) {
 //            float fixedBottom = getFixedBottom(child);
 //            if (fixedBottom <= mNormalViewHeight) {//滑动状态
@@ -297,10 +291,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
         onHandleScroll(child, mNormalViewHeight + mOffsetSpring);
         setTopAndBottomOffset((mOffsetSpring <= 0) ? mOffsetSpring : 0);
         checkShouldSpring(coordinatorLayout, child, mOffsetSpring);
-        Log.e(TAG, "onNestedPreScroll 2 dy:" + dy + " childBottom " + child.getBottom() + " type:"
-                + type + " consumed:" + Arrays.toString(consumed) + " mOffsetSpring:"
-                + mOffsetSpring + " isBottom:" + (getFixedBottom(child) <= mNormalViewHeight)
-                + " infoOffset:" + mShopInfoLayout.getCurrentOffset());
     }
 
     private void checkShouldSpring(CoordinatorLayout coordinatorLayout, AppBarLayout child, int
@@ -371,7 +361,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
                 mImageViewScaleHeight - mDpToPx50) {
             alpha = (mImageViewScaleHeight - mDpToPx40 - fixedBottom) / mDpToPx10;
         }
-        Log.d(TAG, "setTitleBarSearchProcess alpha:" + alpha);
         if (mTitleSearchTextView != null) {
             mTitleSearchTextView.setAlpha(getValidValue(alpha));
         }
@@ -391,7 +380,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
                 mImageViewScaleHeight - mDpToPx40) {
             alpha = (mDpToPx40 + fixedBottom - mImageViewScaleHeight) / mDpToPx20;
         }
-        Log.d(TAG, "setShopImageAphlaProcess  alpha:" + alpha);
         if (mTitleSearchBtn != null) {
             mTitleSearchBtn.setAlpha(getValidValue(alpha));
         }
@@ -423,7 +411,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
                 mImageViewScaleHeight - mDpToPx40) {
             alpha = (mDpToPx40 + fixedBottom - mImageViewScaleHeight) / mDpToPx20;
         }
-        Log.d(TAG, "setShopImageScaleProcess scale:" + scale + " alpha:" + alpha);
         scale = getValidValue(scale);
         alpha = getValidValue(alpha);
         // 缩放目标View
@@ -454,8 +441,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
         } else {
             alpha = 1;
         }
-        Log.d(TAG, "temp setTitleBarBgProcess alpha:" + alpha + " frontHeight:"
-                + mTitleBlurFrontLayout.getHeight());
         if (mTitleBlurFrontLayout != null) {
             mTitleBlurFrontLayout.setAlpha((int) (getValidValue(alpha) * 255));
         }
@@ -512,10 +497,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
             titleBottomTranslationY = -mDpToPx40;
             titleBottom = mTitleBarHeight;
         }
-        Log.d(TAG, "temp onTitleLayoutTranslationY translationY:" + imageTranslationY + " " +
-                "shopScaleY:" + shopScaleY + " shopLikeScaleY:" + shopLikeScaleY + " LikeMarginH:"
-                + mImageViewShopLike.getTranslationY() + " titleBottom:" + titleBottom +
-                " titleBottomTranslationY:" + titleBottomTranslationY);
 
         if (mTitleBottomView != null) {
             mTitleBottomView.setTranslationY(titleBottomTranslationY);
@@ -619,7 +600,6 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     int value = (int) animation.getAnimatedValue();
-                    Log.i(TAG, "animate animateRecoverBySpring animation:" + value);
                     if (updateSpringHeaderHeight(coordinatorLayout, abl, value)) {
                         mOffsetSpring = (value < 0) ? 0 : value;
                     }
