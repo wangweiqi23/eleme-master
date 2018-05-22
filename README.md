@@ -3,4 +3,4 @@
 
 ![饿了么的效果]()
 
-![实现后的效果](http://upload-images.jianshu.io/upload_images/1162505-39c8c46cacd826b2.gif?imageMogr2/auto-orient/strip)
+![实现后的效果]()
