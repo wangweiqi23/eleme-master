@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 填充：设置背景颜色 -->
+    <solid android:color="@color/green_alpha40"/>
+
+    <!-- 设置边框 -->
+    <corners android:radius="1dp" />
+    <stroke
+        android:width="0.3dp"
+        android:color="@color/home_gray"
+        android:dashWidth="5dp"
+        />
+</shape>

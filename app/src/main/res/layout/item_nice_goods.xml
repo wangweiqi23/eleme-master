@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_height="180dp">
+
+    <ImageView
+        android:id="@+id/iv_goods_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/loading_group_11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/iv_goods_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="汉堡"
+        android:textColor="@color/home_black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_goods_img"
+        app:layout_constraintTop_toBottomOf="@+id/iv_goods_img"
+        />
+
+    <TextView
+        android:id="@+id/iv_goods_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="月售88"
+        android:textColor="@color/home_gray_10"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_goods_img"
+        app:layout_constraintTop_toBottomOf="@+id/iv_goods_name"
+        />
+
+    <TextView
+        android:id="@+id/iv_goods_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="¥99"
+        android:textColor="@color/home_red"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_goods_img"
+        app:layout_constraintTop_toBottomOf="@+id/iv_goods_detail"
+        />
+
+    <ImageView
+        android:id="@+id/iv_goods_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cart_add_food_button"
+        android:layout_marginRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_goods_price"
+        />
+
+</android.support.constraint.ConstraintLayout>

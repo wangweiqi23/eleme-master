@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">eleme</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="name">Name:%1$s</string>
+    <string name="age">Age:%1$d</string>
+    <string name="goods_list_tip"> &lt;font color="#515a66" size ="13"&gt; &lt;strong&gt;&lt;big&gt;热销&lt;/big&gt;&lt;/strong&gt; &lt;/font&gt; &lt;&gt; &lt;font color="#515a66" size ="9"&gt;大家喜欢吃，才叫真好吃&lt;/font&gt; </string>
+</resources>

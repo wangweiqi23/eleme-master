@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#3381e3</color>
+
+    <color name="home_blue">#3381e3</color>
+    <color name="home_divider">#aaaaaa</color>
+    <color name="home_gold">#fff000</color>
+    <color name="home_gray">#cccccc</color>
+    <color name="home_gray_6">#666666</color>
+    <color name="home_gray_8">#888888</color>
+    <color name="home_gray_9">#88999999</color>
+    <color name="home_gray_10">#aa666666</color>
+    <color name="home_orange">#FF6827</color>
+    <color name="home_orange_deep">#ff5000</color>
+    <color name="home_orange_pink">#FF9666</color>
+    <color name="home_red">#fc3b3b</color>
+    <color name="home_text">#333333</color>
+    <color name="home_white">#ffffff</color>
+    <color name="home_black">#000000</color>
+    <color name="home_black_2">#222222</color>
+    <color name="home_black_4">#444444</color>
+    <color name="home_black_5">#555555</color>
+    <color name="yellow_top3">#f9e4bb</color>
+    <color name="green_alpha80">#aa24c128</color>
+    <color name="green_alpha40">#3324c128</color>
+    <color name="red_deep">#a52f2d</color>
+    <color name="red_deep40">#33a52f2d</color>
+    <color name="translat">#00000000</color>
+
+    <color name="pink">#fe9dbd</color>
+    <color name="pink40">#33fe9dbd</color>
+
+    <color name="home_orange40">#33FF6827</color>
+    <color name="home_blue40">#333381e3</color>
+
+    <color name="home_yellow">#ffa31d</color>
+    <color name="home_yellow40">#33ffa31d</color>
+
+    <color name="red_light">#ff5000</color>
+    <color name="cornsilk">#FFF8DC</color>
+    <color name="saddlebrown">#8B4513</color>
+
+    <color name="tran70_black">#b2000000</color>
+    <color name="label_life">#0096ff</color>
+
+</resources>
