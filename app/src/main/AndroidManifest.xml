@@ -19,12 +19,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.activity.PageActivity"
-                  android:screenOrientation="portrait"
-                  android:theme="@style/AppTheme.NoActionBar"
-            >
-        </activity>
-
     </application>
 
 </manifest>
