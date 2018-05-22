@@ -1,7 +1,6 @@
 package com.wwq.eleme.view.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import com.wwq.eleme.R;
 import com.wwq.eleme.mode.Goods;
 import com.wwq.eleme.util.ImageUtil;
-import com.wwq.eleme.view.activity.PageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +51,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsHolder>
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.startActivity(new Intent(mContext, PageActivity.class));
+//                mContext.startActivity(new Intent(mContext, PageActivity.class));
             }
         });
     }
