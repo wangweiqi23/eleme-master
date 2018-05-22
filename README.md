@@ -11,6 +11,9 @@
 ---|---
 ![饿了么的效果](https://github.com/wangweiqi23/eleme-master/blob/master/image/device-2018-05-22-ele.mp4.gif)|![实现后的效果](https://github.com/wangweiqi23/eleme-master/blob/master/image/device-2018-05-22-eleclone.mp4.gif)
 
+#### Demo体验
+[点击下载 Apk](https://github.com/wangweiqi23/eleme-master/blob/master/image/app-debug.apk)
+
 #### 概述
 主要是NestedScroll机制（CoordinatorLayout ＋ appbarLayout）的使用, 自定义Behavior，View，以及大量的手势事件处理。
 
