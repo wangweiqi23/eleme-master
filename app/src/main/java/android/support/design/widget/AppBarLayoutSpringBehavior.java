@@ -182,7 +182,6 @@ public class AppBarLayoutSpringBehavior extends AppBarLayout.Behavior {
             mFlingAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
-                    Log.i(TAG, "animate animateFlingSpring animation:" + animation.getAnimatedValue());
                     updateSpringHeaderHeight(coordinatorLayout, abl, (int) animation.getAnimatedValue());
                 }
             });
@@ -363,7 +362,6 @@ public class AppBarLayoutSpringBehavior extends AppBarLayout.Behavior {
                 newOffset = newSpringOffset;
                 newSpringOffset = 0;
             }
-            Log.i(TAG, "setHeaderTopBottomOffset 1-- bottom:" + appBarLayout.getBottom() + " newSpringOffset:" + newSpringOffset);
             updateSpringOffsetByscroll(coordinatorLayout, appBarLayout, newSpringOffset);
             consumed = getTopBottomOffsetForScrollingSibling() - originNew;
             if (newSpringOffset >= 0)
@@ -371,7 +369,6 @@ public class AppBarLayoutSpringBehavior extends AppBarLayout.Behavior {
         }
 
         if (mOffsetSpring > 0 && appBarLayout.getHeight() >= mNormalViewHeight && newOffset > 0) {
-            Log.i(TAG, "setHeaderTopBottomOffset 2-- bottom:" + appBarLayout.getBottom() + " type:" + type+" originNew:"+originNew);
             consumed = updateSpringByScroll(coordinatorLayout, appBarLayout, type, originNew);
             return consumed;
         }
@@ -390,11 +387,9 @@ public class AppBarLayoutSpringBehavior extends AppBarLayout.Behavior {
                     coordinatorLayout.dispatchDependentViewsChanged(appBarLayout);
                 }
                 appBarLayout.dispatchOffsetUpdates(getTopAndBottomOffset());
-                Log.i(TAG, "setHeaderTopBottomOffset 3-- bottom:" + appBarLayout.getBottom() + " newOffset:" + newOffset+" curOffset:"+curOffset);
                 updateAppBarLayoutDrawableState(coordinatorLayout, appBarLayout, newOffset,
                         newOffset < curOffset ? -1 : 1, false);
             } else if (curOffset != minOffset) {
-                Log.i(TAG, "setHeaderTopBottomOffset 4-- bottom:" + appBarLayout.getBottom() + " type:" + type+" originNew:"+originNew);
                 consumed = updateSpringByScroll(coordinatorLayout, appBarLayout, type, originNew);
             }
         } else {
