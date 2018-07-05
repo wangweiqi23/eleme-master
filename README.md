@@ -13,6 +13,7 @@
 
 #### Demo体验
 [点击下载 Apk](https://github.com/wangweiqi23/eleme-master/blob/master/image/app-debug.apk)
+adb install -t app-debug.apk
 
 #### 概述
 主要是NestedScroll机制（CoordinatorLayout ＋ appbarLayout）的使用, 自定义Behavior，View，以及大量的手势事件处理。
@@ -21,4 +22,4 @@
 
 1. 沟通和交流
 
-    我的简书：http://www.jianshu.com/users/884c2e4b6e38/timeline （后面会在这里写一篇配套说明）
+    我的简书：http://www.jianshu.com/users/884c2e4b6e38/timeline （这里一篇配套说明）
