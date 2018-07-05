@@ -457,17 +457,8 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
      */
     private void onTitleLayoutTranslationY(int fixedBottom, float shopScaleY, float
             shopLikeScaleY) {
-        int imageTranslationY;
-        int titleBottomTranslationY;
+        int headerHeight;
         int titleBottom;
-        if (fixedBottom > mNormalViewHeight) {
-            imageTranslationY = 0;
-        } else if (fixedBottom <= mNormalViewHeight && fixedBottom > mImageViewScaleHeight -
-                mDpToPx20) {
-            imageTranslationY = fixedBottom - mNormalViewHeight;
-        } else {
-            imageTranslationY = -mDpToPx40;
-        }
 
         if (fixedBottom > mImageViewScaleHeight) {
             shopScaleY = 0;
@@ -483,37 +474,43 @@ public class AppBarLayoutScrollBehavior extends AppBarLayout.Behavior {
         shopLikeScaleY = 0;
 
         if (fixedBottom > mNormalViewHeight) {
-            titleBottomTranslationY = 0;
+            headerHeight = mDpToPx20;
             titleBottom = mNormalViewHeight - mShopInfoHeight + mDpToPx20;
         } else if (fixedBottom <= mNormalViewHeight && fixedBottom > mNormalViewHeight -
                 mDpToPx40) {
-            titleBottomTranslationY = fixedBottom - mNormalViewHeight;
+            headerHeight = mDpToPx20;
             titleBottom = fixedBottom - mShopInfoHeight + mDpToPx20;
         } else if (fixedBottom <= mNormalViewHeight - mDpToPx40 && fixedBottom >
                 mNormalViewHeight - mDpToPx60) {
-            titleBottomTranslationY = -mDpToPx40;
+            headerHeight = fixedBottom - mNormalViewHeight + mDpToPx60;
             titleBottom = fixedBottom - mShopInfoHeight + mDpToPx20;
         } else {
-            titleBottomTranslationY = -mDpToPx40;
+            headerHeight = 0;
             titleBottom = mTitleBarHeight;
         }
 
         if (mTitleBottomView != null) {
-            mTitleBottomView.setTranslationY(titleBottomTranslationY);
+            ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams)
+                    mTitleBottomView.getLayoutParams();
+            layoutParams.height = headerHeight;
+            mTitleBottomView.setAlpha(headerHeight);
         }
         if (mTitleBlurFrontLayout != null) {
             mTitleBlurFrontLayout.setBottom(titleBottom);
         }
         if (mTitleLayout != null) {
-            mTitleLayout.setBottom(titleBottom);
+            CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)
+                    mTitleLayout.getLayoutParams();
+            layoutParams.height = titleBottom;
+            mTitleLayout.setLayoutParams(layoutParams);
         }
 
         // 缩放目标View
         if (mImageViewShop != null) {
-            mImageViewShop.setTranslationY(imageTranslationY + shopScaleY);
+            mImageViewShop.setTranslationY(shopScaleY + mDpToPx20 - headerHeight);
         }
         if (mImageViewShopLike != null) {
-            mImageViewShopLike.setTranslationY(imageTranslationY + shopLikeScaleY);
+            mImageViewShopLike.setTranslationY(mDpToPx20 - headerHeight);
         }
     }
 
